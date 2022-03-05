@@ -1,4 +1,4 @@
-# ghibli-films-cli
+# Ghibli Films Cli
 Welcome Studio Ghibli fan, become immersed in your favorite films with this Cli gem! This Cli uses the [Studio Ghibli API](https://ghibliapi.herokuapp.com/#) to allow user to view all Studio Ghibli films.
 
 # Installation
