@@ -6,7 +6,8 @@ class API
 
     def get_film_data
         film_hash = HTTParty.get(@url + "/films")
-        film_hash
+        film_array = film_hash
+        self.new_film_objects(film_array)
     end
 
     def film_objects(film_array)
