@@ -1,7 +1,7 @@
 class CLI
     def run
         greeting
-        API
+        API.get_film_data
         menu
     end
 
