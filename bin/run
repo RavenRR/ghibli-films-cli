@@ -3,4 +3,3 @@
 require_relative "../config/environment"
 
 CLI.new.run
-API.new.get_film_data
