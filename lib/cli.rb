@@ -12,15 +12,29 @@ class CLI
     def greeting
         puts "Salutations fellow spirit, let's explore the films of Studio Ghibli"
         puts "----------------------------------------------------"
-        puts "Please wait, loading menu...."
-        puts "----------------------------------------------------"
         sleep(3)
     end
 
     def menu
-        puts "There are multitudes of films to see, what will you choose first?"
+        puts "Would you like to explore the world of Studio Ghibli?"
         puts "----------------------------------------------------"
-        display_title
+        sleep(2)
+        puts "Y/N?"
+        puts "----------------------------------------------------"
+        input = gets.strip.downcase
+
+        if input == "y"
+            puts "There are multitudes of films to see, what will you choose first?"
+            puts "----------------------------------------------------"
+            display_title
+        elsif input == "n"
+            puts "----------------------------------------------------"
+            puts "Farewell Spirit!"
+            exit
+        else
+            puts "invalid choice"
+            menu
+        end
     end
 
     def display_title
