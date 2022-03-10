@@ -16,30 +16,23 @@ class CLI
     end
 
     def menu
-        puts "Would you like to explore the world of Studio Ghibli?"
-        puts "----------------------------------------------------"
-        sleep(2)
-        puts "Y/N?"
-        puts "----------------------------------------------------"
-        input = gets.strip.downcase
-
-        if input == "y"
-            puts "There are multitudes of films to see, what will you choose first?"
-            puts "----------------------------------------------------"
+        input = nil
+        until input == "exit"
             display_title
-        elsif input == "n"
-            puts "----------------------------------------------------"
-            puts "Farewell Spirit!"
-            exit
-        else
-            puts "invalid choice"
-            menu
+            input = gets.chomp.downcase
         end
+
+        goodbye
+        exit
     end
 
     def display_title
         Film.all.each.with_index(1) do |film, index|
             puts "#{index}. #{film.title}"
         end
+    end
+
+    def goodbye
+        puts "Farewell, spirit."
     end
 end
