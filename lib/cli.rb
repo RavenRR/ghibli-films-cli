@@ -34,10 +34,12 @@ class CLI
 
     def show_film(input)
         film_obj = Film.all[input.to_i-1]
-        puts "Title: #{film_obj.title}"
-        puts "Director: #{film_obj.director}"
-        puts "Producer: #{film_obj.producer}"
-        puts "Description: #{film_obj.description}"
+        puts "Title: #{film_obj.title}".colorize(:light_blue)
+        puts "Director: #{film_obj.director}".colorize(:blue)
+        puts "Producer: #{film_obj.producer}".colorize(:blue)
+        puts "Description: #{film_obj.description}".colorize(:red)
+        puts "Type menu to return to the main menu".colorize(:green)
+        user_input
     end 
 
     def goodbye
@@ -48,6 +50,8 @@ class CLI
         @input = gets.chomp.downcase
         if @input == "exit"
             exit
+        elsif @input == "menu"
+            menu
         end
         @input
     end
