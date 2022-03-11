@@ -20,9 +20,6 @@ class CLI
         until @input == "exit"
             display_title
         end
-
-        goodbye
-        exit
     end
 
     def display_title
@@ -38,17 +35,18 @@ class CLI
         puts "Director: #{film_obj.director}".colorize(:blue)
         puts "Producer: #{film_obj.producer}".colorize(:blue)
         puts "Description: #{film_obj.description}".colorize(:red)
-        puts "Type menu to return to the main menu".colorize(:green)
+        puts "Type menu to return to the main menu or exit to leave".colorize(:green)
         user_input
     end 
 
     def goodbye
-        puts "Farewell, spirit."
+        puts "Farewell, spirit.".colorize(:light_blue)
     end
 
     def user_input
         @input = gets.chomp.downcase
         if @input == "exit"
+            goodbye
             exit
         elsif @input == "menu"
             menu
